@@ -2,8 +2,8 @@
 I used Google Cloud platform for cloud platform. Cloud is not necessary, local development is also possible. However, I wanted to discover GCP as well.
 I prefered pyenv for managing python version and virtual environment.
 
-## GCP Setup
-###  Create GCP Account and Project
+## 1. GCP Setup
+### Create GCP Account and Project
 1. Open a free personal GCP account.
 2. Create a new project named mlops-zoomcamp.    
 
@@ -36,7 +36,7 @@ Host mlops-zoomcamp
 ```
 4. Now, you can connect using: `ssh mlops-zoomcamp`
 
-## Setting Up Python Environment
+## 2. Setting Up Python Environment
 
 ### Install Pyenv
 1. Install Pyenv following the instructions from the [Pyenv GitHub repository.](https://github.com/pyenv/pyenv-installer)
@@ -73,6 +73,60 @@ Or, you can use command `pyenv which python`. To check the list of python versio
   pyenv virtualenv 3.9.7 mlops-zoomcamp
   ```
 
+## 3. Install Docker
+```
+sudo apt install docker.io
+```
+To run docker without sudo:
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+
+### Install Docker Compose
+
+1. Install docker-compose in a separate directory:
+   ```
+   mkdir soft
+   cd soft
+   ```
+2. To get the latest release of Docker Compose, go to https://github.com/docker/compose and download the release for your OS.
+    ```
+    wget https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -O docker-compose
+    ```
+3. Make it executable:
+   ```
+   chmod +x docker-compose
+   ```
+4. Add to the soft directory to PATH. Open the .bashrc file:
+   ```
+   vim ~/.bashrc
+   ```
+5. In .bashrc, add the following line:
+   ```
+   export PATH="${HOME}/soft:${PATH}"
+   ```
+6. Save it and run the following to make sure the changes are applied:
+   ```
+   source ~/.bashrc
+   ```
+
+### Run Docker
+```
+docker run hello-world
+```
+If you get docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied. error, restart your VM instance.
+
+Note: If you get It is required that your private key files are NOT accessible by others. This private key will be ignored. error, you should change permits on the downloaded file to protect your private key:
+
+```
+chmod 400 name-of-your-private-key-file.pem
+```
+
+## 4. Repositories followed
+- https://github.com/syahrulhamdani/dtc-mlops/blob/main/week-1-introduction/README.md
+- https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/01-intro
+- 
 
 
 
