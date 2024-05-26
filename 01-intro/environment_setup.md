@@ -122,11 +122,13 @@ Note: If you get It is required that your private key files are NOT accessible b
 ```
 chmod 400 name-of-your-private-key-file.pem
 ```
+## 4. PyCharm Remote Development
 
-## 4. Repositories followed
+Follow the instructions in the [PyCharm documentation](https://www.jetbrains.com/help/pycharm/2023.1/remote-development-a.html#gateway) to set up remote development.
+
+## 5. Repositories followed
 - https://github.com/syahrulhamdani/dtc-mlops/blob/main/week-1-introduction/README.md
 - https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/01-intro
-- 
 
 
 
